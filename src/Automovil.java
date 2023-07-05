@@ -1,9 +1,57 @@
 public class Automovil {
-    String fabricante;
-    String modelo;
-    String color = "gris";
-    double cilindrada;
-    int capacidadEstanque = 40;
+    private String fabricante;
+    private String modelo;
+    private String color = "gris";
+    private double cilindrada;
+    private int capacidadEstanque = 40;
+
+    public Automovil() {
+    }
+
+    public Automovil(String fabricante, String modelo) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getCilindrada() {
+        return cilindrada;
+    }
+
+    public void setCilindrada(double cilindrada) {
+        this.cilindrada = cilindrada;
+    }
+
+    public int getCapacidadEstanque() {
+        return capacidadEstanque;
+    }
+
+    public void setCapacidadEstanque(int capacidadEstanque) {
+        this.capacidadEstanque = capacidadEstanque;
+    }
 
     public String verDetalle() {    /*en este caso this hace referencia a atributos de la clase*/
         String sb = "auto.modelo = " + this.modelo + "\n" +
