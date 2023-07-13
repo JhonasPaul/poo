@@ -13,6 +13,21 @@ public class Automovil {
         this.modelo = modelo;
     }
 
+    public Automovil(String fabricante, String modelo, String color) {
+        this(fabricante, modelo);
+        this.color = color;
+    }
+
+    public Automovil(String fabricante, String modelo, String color, double cilindrada) {
+        this(fabricante, modelo, color);
+        this.cilindrada = cilindrada;
+    }
+
+    public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque) {
+        this(fabricante, modelo, color, cilindrada);
+        this.capacidadEstanque = capacidadEstanque;
+    }
+
     public String getFabricante() {
         return fabricante;
     }
@@ -84,6 +99,13 @@ public class Automovil {
 
     public float calcularConsumo(int km, int porcentajeBencina) {
         return km / (capacidadEstanque * (porcentajeBencina/100f));
+    }
+
+    /*compara por valor que contiene el atributo*/
+    @Override
+    public boolean equals(Object obj) {
+        Automovil a = (Automovil) obj;
+        return (this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
     }
 
 }
