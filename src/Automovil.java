@@ -2,22 +2,24 @@ public class Automovil {
     private int id;
     private String fabricante;
     private String modelo;
-    private String color = COLOR_GRIS;
+    private Color color = Color.GRIS;
     private double cilindrada;
     private int capacidadEstanque = 40;
 
-    private static String colorPatente = "naranja";
+    private TipoAutomovil tipo;
+
+    private static Color colorPatente = Color.AMARILLO;
     private static int capacidadEstanqueStatic = 30;
     private static int ultimoId;
 
     public static final Integer VELICIADAD_MAXIMA_CARRETERA = 120;
     public static final int VELICIADAD_MAXIMA_CIUDAD = 60;
 
-    public static final String COLOR_ROJO = "Rojo";
+   /* public static final String COLOR_ROJO = "Rojo";
     public static final String COLOR_AMARILLO = "Amarillo";
     public static final String COLOR_AZUL= "AZUL";
     public static final String COLOR_BLANCO= "Blanco";
-    public static final String COLOR_GRIS= "Gris";
+    public static final String COLOR_GRIS= "Gris";*/
 
     public Automovil() {
         this.id = ++ultimoId;
@@ -30,6 +32,8 @@ public class Automovil {
 
     }
 
+
+
     public int getId() {
         return id;
     }
@@ -38,17 +42,17 @@ public class Automovil {
         this.id = id;
     }
 
-    public Automovil(String fabricante, String modelo, String color) {
+    public Automovil(String fabricante, String modelo, Color color) {
         this(fabricante, modelo);
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
         this(fabricante, modelo, color);
         this.cilindrada = cilindrada;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadEstanque) {
         this(fabricante, modelo, color, cilindrada);
         this.capacidadEstanque = capacidadEstanque;
     }
@@ -69,11 +73,11 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -94,18 +98,27 @@ public class Automovil {
 
     }
 
-    public static String getColorPatente() {
+    public static Color getColorPatente() {
         return colorPatente;
     }
 
-    public static void setColorPatente(String colorPatente) {
+    public static void setColorPatente(Color colorPatente) {
         Automovil.colorPatente = colorPatente;
+    }
+
+    public TipoAutomovil getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoAutomovil tipo) {
+        this.tipo = tipo;
     }
 
     public String verDetalle() {    /*en este caso this hace referencia a atributos de la clase*/
         String sb = "auto.id = " + this.id + "\n" +
                 "auto.modelo = " + this.modelo + "\n" +
-                "la cilindrada es: " + this.color + "\n" +
+                "auto.tipo = " + this.getTipo().getDescription() + "\n" +
+                "la cilindrada es: " + this.color+ "\n" +
                 "auto.fabricante = " + this.fabricante + "\n" +
                 "auto.colorPatente = " + Automovil.colorPatente + "\n" +
                 "auto.cilindrada = " + this.cilindrada + "\n";
