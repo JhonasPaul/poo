@@ -1,4 +1,5 @@
 public class Automovil {
+    /*prueba1*/
     private int id;
     private String fabricante;
     private String modelo;
@@ -185,4 +186,3 @@ public class Automovil {
 }
 
 
-/*prueba1*/
