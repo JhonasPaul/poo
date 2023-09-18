@@ -1,5 +1,5 @@
 public class Automovil {
-    /*prueba1*/
+    /*prueba2*/
     private int id;
     private String fabricante;
     private String modelo;
